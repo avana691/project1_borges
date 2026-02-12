@@ -1,0 +1,179 @@
+.averia-serif-libre-light {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.averia-serif-libre-regular {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.averia-serif-libre-bold {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.averia-serif-libre-light-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.averia-serif-libre-regular-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.averia-serif-libre-bold-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+    background-color: #ECE3D1;
+    font-family: 'Averia Serif Libre', serif;
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    z-index: -1;
+}
+
+#text-container {
+    display: inline-block;
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 0.9em;
+    position: center;
+    text-align: justify;
+    max-width: 70%;
+    margin: 20px auto;
+}
+
+
+#labyrinth {
+    display: inline-block;
+    font-style: italic;
+    font-size:0.9em;
+    max-width: 27%;
+    max-height: 200px;
+    padding: 0 10px;
+
+}
+
+#forkingpath {
+    display: inline-block;
+    font-size:0.9em;
+    font-weight:light;
+    max-width: 20%;
+    color: #C2C168;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+#forkingpath:hover {
+    opacity: 0.5;
+    transition: smooth 7s;
+    transform: scale(0.97);
+}
+
+#son {
+    font-size:0.9em;
+    font-weight:light;
+    padding: 0 10px;
+    max-width: 140px;
+    color: #777737;
+    transform: rotate(-90deg);
+    margin: 0 0 0 20px;
+}
+
+#wiclif {
+    font-size:0.9em;
+    font-weight:light;
+    padding: 0;
+    max-width: 50%;
+    padding: 0 10px;
+    margin: 0 0 0 20px;
+}
+
+#canoe {
+    font-size:0.9em;
+    font-style:italic;
+    color: black;
+    max-width: 27%;
+    padding: 0;
+}
+
+#reflection {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 10%;
+    padding: 0 10px;
+}
+
+#reality {
+    font-size:0.9em;
+    padding: 0;
+    color: #C2C168;
+    max-width: 30%;
+    padding: 0 10px;
+}
+
+#book {
+    font-size:0.9em;
+    padding: 0;
+    color: #777737;
+    max-width: 30%;
+    padding: 0 10px;
+}
+
+#numbers {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 30%;
+    padding: 0 10px;  
+}
+
+#examination {
+  font-size:0.9em;
+  padding: 0;
+  color: black;
+  max-width: 55%;
+  padding: 0 10px;
+}
+
+
+img[src="path.jpeg"] {
+    width: 100%;
+    overflow: hidden;
+}
+
+a[href="path.html"] {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+img[src="path.jpeg"]:hover{
+    opacity: 0.6;
+    transform: scale(0.95);
+    transition: smooth 7s;
+}
+
+img[src="fire.png"] {
+    width: auto;
+    height: 390px;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+}
+
+img[src="fire.png"]:hover {
+    opacity: 0.6;
+    transform: scale(1.08);
+    transition: smooth 7s;
+}
