@@ -1,0 +1,551 @@
+.averia-serif-libre-light {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.averia-serif-libre-regular {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.averia-serif-libre-bold {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.averia-serif-libre-light-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.averia-serif-libre-regular-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.averia-serif-libre-bold-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.door-container {
+    /* cover entire viewport and sit on top */
+    opacity: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none; /* allow clicks to pass through unless doors themselves enable events */
+}
+
+/* doors are fixed halves that sit above content */
+.left-door {
+    padding: 0;
+    position: fixed;
+    text-wrap: wrap;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: #39362F;
+    color: #C2C168;
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+    z-index: 10000;
+    pointer-events: auto; /* allow JS-driven interactions */
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 3em;
+    font-style: italic;
+    border: 10px solid #777737;
+}
+
+.right-door {
+    padding: 0;
+    position: fixed;
+    font-size: 0.8em;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: #39362F;
+    color: #C2C168;
+    display: flex;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+    z-index: 10000;
+    pointer-events: auto; /* allow JS-driven interactions */
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 1em;
+    font-style: italic;
+    border: 10px solid #777737;
+}
+
+
+/* left on the left, right on the right */
+.left-door {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-door {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* open class moves doors fully off-screen */
+.left-door.open {
+    transform: translateX(-100%);
+}
+
+.right-door.open {
+    transform: translateX(100%);
+}
+
+body {
+    background-color: #ECE3D1;
+    font-family: 'Averia Serif Libre', serif;
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; /* ensure items in the same row share the row height */
+    margin-top: 70px;
+    z-index: -1;
+}
+
+#text-container {
+    display: inline-block;
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 1.1em;
+    position: center;
+    text-align: justify;
+    max-width: 70%;
+    margin: 20px auto;
+}
+
+img[src="path.jpeg"] {
+    display: inline-block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin: 10px;
+}
+
+img[src="path.jpeg"]:hover {
+    opacity: 0.4;
+    transform: scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 2s;
+}
+
+
+#forkingpath {
+    display: inline-block;
+    font-size:0.9em;
+    font-weight:light;
+    width: 300px;
+    max-width: 300px;
+    max-height: 400px;
+    color: black;
+    padding: 0 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+#forkingpath:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+}
+
+img[src="fire.png"] {
+    display: inline-block;
+    width: 500px;
+    height: auto;
+}
+
+img[src="fire.png"]:hover {
+    opacity: 0.4;
+    transform: scale(1.06);
+    transition-timing-function: smooth;
+    transition-duration: 2s;
+}
+
+#canoe {
+    font-size:0.9em;
+    font-style:italic;
+    color: black;
+    padding: 0;
+    text-decoration: none;
+    /* make #canoe a fixed-width flex item so it can sit beside the fire image */
+    width: 300px;
+    box-sizing: border-box;
+    margin: 30px 0 0 10px;
+    flex: 0 0 300px;
+    order: -1;             /* bring it up in the visual order to the first row */
+    align-self: flex-start;
+}
+
+#canoe:hover {
+    color: #606007;
+    text-decoration: none;
+    transform: scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#labyrinth {
+    display: inline-block;
+    font-style: normal;
+    font-size:0.9em;
+    max-width: 27%;
+    max-height: 200px;
+    padding: 0 10px;
+    color: black;
+}
+
+#labyrinth:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+    text-decoration: none;
+}
+
+#son {
+    font-size:0.9em;
+    font-weight:light;
+    padding: 0 10px;
+    max-width: 140px;
+    color: black;
+    transform: rotate(-90deg);
+    margin: 0 0 0 20px;
+}
+
+#son:hover {
+    color: #7a7a0e;
+    text-decoration: none;
+    transform: rotate(-90deg) scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#wiclif {
+    font-size:0.9em;
+    font-weight:light;
+    padding: 0;
+    max-width: 55%;
+    padding: 0 10px;
+    margin: 0 0 0 20px;
+    color: black;
+}
+
+#wiclif:hover {
+    color: rgb(245, 255, 215);
+    transition: smooth;
+    transition: 1.04s;
+    transform: scale(0.95);
+}
+
+img[src="time.png"] {
+    width: auto;
+    height: 350px;
+    overflow: hidden;
+    margin: 0;
+}
+
+img[src="time.png"]:hover {
+    opacity: 0.6;
+    transform: scale(1.05);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#reflection {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 15%;
+    padding: 0 10px;
+}
+
+#reflection:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+    text-decoration: none;
+}
+
+#own {
+    font-size:0.9em;
+    padding: 0;
+    font-style:italic;
+    color: black;
+    max-width: 30%;
+    padding: 0 10px;
+}
+
+#own:hover {
+    color: rgb(245, 255, 215);
+    transition: smooth;
+    transition: 1.04s;
+    transform: scale(0.95);
+}
+
+#book {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 10%;
+    max-height: 50px;
+    padding: 0 10px;
+}
+
+#book:hover {
+    color: rgb(245, 255, 215);
+    transition: smooth;
+    transition: 1.04s;
+    transform: scale(0.95);
+}
+
+#numbers {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 24%;
+    padding: 0 10px;  
+}
+
+#numbers:hover {
+    color: rgb(245, 255, 215);
+    transition: smooth;
+    transition: 1.04s;
+    transform: scale(0.95);
+}
+
+#examination {
+  font-size:0.9em;
+  margin: 0;
+  padding: 0;
+  color: black;
+  max-width: 13%;
+  max-height: 200px;
+  padding: 0 10px;
+}
+
+#examination:hover {
+    color: #606007;
+    text-decoration: none;
+    transform: scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#convo {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 20%;
+    padding: 0 10px;  
+}
+
+#convo:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+}
+
+#end {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    font-style: italic;
+    max-width: 23%;
+    max-height: 380px;
+    padding: 0 10px;
+    transform: rotate(-90deg);
+    margin: 0 0 0 35px;
+}
+
+#end:hover {
+    color: #606007;
+    text-decoration: none;
+    transform: rotate(-90deg) scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+img[src="ruins.jpeg"] {
+    width: auto;
+    height: 360px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+img[src="ruins.jpeg"]:hover {
+    opacity: 0.6;
+    transform: scale(1.05);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#enemy {
+    font-size: 0.9em;
+    padding: 0;
+    color: black;
+    max-width: 20%;
+    padding: 0 10px;
+}
+
+#enemy:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+    text-decoration: none;
+}
+
+#dream {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    max-width: 64%;
+    padding: 0 10px;
+}
+
+#dream:hover {
+    color: #606007;
+    text-decoration: none;
+    transform: scale(1.03);
+    transition-timing-function: smooth;
+    transition-duration: 1s;
+}
+
+#belief {
+    font-size:0.9em;
+    padding: 0;
+    color: black;
+    font-style: italic;
+    max-width: 30%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+#belief:hover {
+    color: #C2C168;
+    transition: smooth;
+    transition: 0.8s;
+    transform: scale(0.97);
+    text-decoration: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    height: max-content;
+    width: max-content;
+    object-fit: contain;
+}
+
+a img {
+    display: inline-block;
+    text-decoration: none;
+    height: auto;
+    width: max-content;
+    object-fit: contain;
+}
+
+
+#gfpText {
+    font-style: normal;
+    font-family: 'Averia Serif Libre', serif;
+    align-items: center;
+    margin: 60px;
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+    /* preserves newlines in the JS string and allows wrapping */
+    white-space: pre-wrap; 
+    /* use Averia Serif Libre for gfpText */
+}
+
+#crText {
+    font-style: normal;
+    font-family: 'Averia Serif Libre', serif;
+    align-items: center;
+    margin: 60px;
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+    /* preserves newlines in the JS string and allows wrapping */
+    white-space: pre-wrap;
+}
+
+#bosText {
+    align-items: center;
+    font-style: normal;
+    font-family: 'Averia Serif Libre', serif;
+    margin: 60px;
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+    /* preserves newlines in the JS string and allows wrapping */
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+.fade.show {
+    opacity: 1;
+}
+
+button {
+    color:#777737;
+    border-radius: 0;
+    border: 2px solid #777737;
+    background-color: #C2C168;
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 2em;
+    font-style: italic;
+    padding: 5px 15px;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+button:hover {
+    background-color: #777737;
+    color: #C2C168;
+    border: 2px solid #C2C168;
+}
+
+#key-button {
+    /* shared interactive element defaults to avoid empty ruleset */
+    /* display: inline-block; */
+    pointer-events: auto;
+    background-image: url('togglehole.png');
+    background-color: transparent;
+    background-size: cover;
+    z-index: 10001;
+    position: absolute;
+    left: 49.1%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    border: none;
+    width: 100px;
+    height: 100px;
+}
